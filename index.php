@@ -29,19 +29,20 @@
 <body class="container-fluid"
  style="
         background-repeat: no-repeat;
-        background-size: cover;  
+        background-size: inherit;  
         background-image:url(./img/classbg.jpg);
 ">
   <!-- header -->
 
 <!-- Body Starts -->
 <!-- Row 1 -->
-<div class="row" style=" background-color:rgba(255, 211, 51, 0.6);">
-  <div class="col-md-12">
+<div class="row" style=" background-color:rgba(245, 237, 201, 0.3);">
+  <div class="offset-md-6 col-md-1">
     <div >
       <p class="display-4 text-success" >
-        <img src="./img/theprepositiongame.png" align="center" width="120px" height="80px" style="text-shadow: black;"> The Preposition Game
+        <img src="./img/theprepositiongamelogo.png" align="center" width="340px" height="110px" style="text-shadow: black;"> 
       </p>
+
     </div>    
   </div>
 </div>
@@ -74,8 +75,9 @@
 <!-- Row 2 -->
 
 
-<!-- Row 3 -->
+<!-- Row 3 Col 1 -->
 <div class="row">
+
   <!-- Row 3 Col 1 //offset-md-1-->
   <div class="offset-md-1 col-md-3 g-1 ">
 
@@ -83,14 +85,17 @@
       <p class="text-danger" >
         <small class="text-muted">Welcome to The Preposition Game. You will love playing it. Answer all quiz and become the winner.</small> 
       </p>
-
+      <div>
+        <img src="img/theprepositiongame.png" class="img-fluid">
+      </div>
       <div id="playername">
-        <h3 class="text-danger">Enter Your Name Here To Play</h3>
+        <h3 class="text-success">Enter Your Name </h3>
 
           <input type="text" name="name" id="name" placeholder="eg. Abrar Khan" class="form-control m-2 p-1">
           <!-- Submit Button -->
-          <input type="submit" onclick="nameEntry()" value="Start" class="btn btn-danger m-3 p-2">
+          <input type="submit" onclick="nameEntry()" value="Start" class="btn btn-success m-3 p-2">
       </div>
+      
     </div>
 
   </div>
@@ -127,6 +132,59 @@
       <!--Quiz- Row 3 Col 2 Row 1  -->
 
 
+            <div class="row" id="quizbox">
+               <div class="" style="" id="gameover">
+                     <script type="text/javascript">
+                       function gameOver(){
+                        document.getElementById("gameover").innerHTML=
+                              "<div class='offset-md-4 col-md-10'style='z-index: 100; width: 100%; height: 100%; box-sizing: content-box; background-color:rgb(255, 219, 89);'>"+
+                                "<div class='row' style='height: 400px;width: 90px; background-color:rgb(254, 225, 87);'>"+
+                                    "<blink><h1 class='col display-3 text-danger'>Game Over</h1></blink>"+
+                                "</div>"+
+                              "</div>";
+                              setTimeout(function(){window.location.reload()},5000);
+                      }
+                     </script>
+                   </div>
+                  <!--  -->
+      <!--Quiz- Row 3 Col 2 Row 2 -->
+      <div class="row " 
+                          style="
+                          background-color:rgba(220, 228, 252, 0.3);
+                          background-image: url(img/chalkboard2.png);
+                          background-repeat: no-repeat;
+                          background-size:cover;
+                          padding: 18%;
+
+                          ">
+                        <div class="col-md-12 chalkboard">
+                          <div class="row">
+                            <h4 class="col-md-12 text-light">
+                              Fill in the gap sentence here_______ type answer below.........and click answer button.
+                            </h4>
+
+
+                          </div>
+                          <div class="row">
+                            <input type="text" name="ansvalue" id="ansvalue" placeholder="Type your answer here " class="col-md-8 m-1">
+                            <!-- Submit Button -->
+                            <input type="submit" onclick="ansSubmit()" value="Answer" class="col-md-4 btn btn-outline-light ">
+                          </div>
+                          
+                        
+                      </div>
+                    
+                  
+
+                <!-- //}
+                 -->
+              <!-- </script> -->
+            <!-- </div> -->
+               
+
+      </div>    
+      <!--Quiz- Row 3 Col 2 Row 2 -->
+
       
 
     <!-- Form Quiz section Ends -->
@@ -134,49 +192,6 @@
 
 </div>
 <!-- Row 3 -->
-
-<!--Quiz- Row 4 Col 1  -->
-      <div class="row" id="quizbox">
-         <div class="" style="" id="gameover">
-               <script type="text/javascript">
-                 function gameOver(){
-                  document.getElementById("gameover").innerHTML=
-                        "<div class='offset-md-4 col-md-10'style='z-index: 100; width: 100%; height: 100%; box-sizing: content-box; background-color:rgb(255, 219, 89);'>"+
-                          "<div class='row' style='height: 400px;width: 90px; background-color:rgb(254, 225, 87);'>"+
-                              "<blink><h1 class='col display-3 text-danger'>Game Over</h1></blink>"+
-                          "</div>"+
-                        "</div>";
-                        setTimeout(function(){window.location.reload()},5000);
-                }
-               </script>
-             </div>
-            <!--  -->
-              <div class=" offset-md-5 col-md-6 "  >
-                <div class="row border border-5 border-primary rounded" style="background-color:rgba(220, 228, 252, 0.3);">
-                    <b class="col-md-2 display-4 m-1" id="numOne" ></b>
-                    <b class="col-md-1 display-4 m-1" id="mathsym"></b>
-                    <b class="col-md-2 display-4 m-1" id="numTwo"></b>
-                    <b class="col-md-1 display-4 m-1" id="eqsym"></b>
-                    <!-- <b class="col-md-1  m-1" id="numThree">0</b> -->
-                    <!-- <b class="col display-3" id="numThreet"></b> -->
-                      
-                    
-                    <input type="text" name="ansvalue" id="ansvalue" placeholder="" class="col-md-3 m-1 display-4">
-                    <!-- Submit Button -->
-                    <input type="submit" onclick="ansSubmit()" value="Answer" class="col-md-2 btn btn-success ">
-                                
-                </div>
-              </div>
-            
-
-          <!-- //}
-           -->
-        <!-- </script> -->
-      <!-- </div> -->
-         
-
-  </div>    
-<!--Quiz- Row 4 Col 1 -->
 
 
 
@@ -333,9 +348,9 @@
 <!-- Footer  -->
 <!-- ================================================================================== -->
 
-<div class="row text-end fixed-bottom">
+<div class="row text-end fixed-bottom" style=" background-color:rgba(45, 237, 20, 0.7);">
   <div class="offset-md-1 col-md-10">
-    <p class="text-success">&copy; Copyright 2021. All rights reserved by M. Ali Abrar Khan- <a href="+8801939123946">+8801939123946</a> <a href=""> |github Link|  </a>   </p>
+    <p class="text-primary h6">&copy; Copyright 2021. All rights reserved by M. Ali Abrar Khan- <a href="+8801939123946" style="color:whitesmoke; ">+8801939123946</a> <a href="https://github.com/MAliAbrarKhan19/The-Preposition-game-JS-HTML-CSS-Bootstrap" style="text-decoration: none;color: whitesmoke;"> |github Link|  </a>   </p>
     
   </div>
 </div>
