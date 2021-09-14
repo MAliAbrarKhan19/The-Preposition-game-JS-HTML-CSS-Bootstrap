@@ -30,7 +30,7 @@
  style="
         background-repeat: no-repeat;
         background-size: inherit;  
-        background-image:url(./img/classbg.jpg);
+        background-image:url(./img/classbg1.jpg);
 ">
   <!-- header -->
 
@@ -83,7 +83,7 @@
 
     <div class="row ml-4" style=" background-color:rgba(245, 237, 201, 0.7);">
       <p class="text-danger" >
-        <small class="text-muted">Welcome to The Preposition Game. You will love playing it. Answer all quiz and become the winner.</small> 
+        <h6 class="text-muted">Welcome to The Preposition Game. You will love playing it. Answer all quiz and become the winner.</h6> 
       </p>
       <div>
         <img src="img/theprepositiongame.png" class="img-fluid">
@@ -192,7 +192,7 @@
 <script type="text/javascript" src="./questions.js"></script>
 <script type="text/javascript">
 //<!-- JavaScript -->
-      gameOver();//for testing
+      //gameOver();//for testing
 
   //VAriables
         
@@ -287,8 +287,8 @@
  function gameOver(){
       document.getElementById("qtxt").innerHTML=
           ""+
-          "<div class='col-md';>"+"<h1 class=' text-danger'><blink>Game Over</blink></h1>"+"</div>";
-          setTimeout(function(){window.location.reload()},5000);
+          "<div class='';>"+"<b class='display-4 text-light'><marquee>Game Over</marquee></b>"+"</div>";
+          setTimeout(function(){window.location.reload()},10000);
                       }
 //ansSubmit
         function ansSubmit() {
