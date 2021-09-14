@@ -135,15 +135,7 @@
             <div class="row" id="quizbox">
                <div class="" style="" id="gameover">
                      <script type="text/javascript">
-                       function gameOver(){
-                        document.getElementById("gameover").innerHTML=
-                              "<div class='offset-md-4 col-md-10'style='z-index: 100; width: 100%; height: 100%; box-sizing: content-box; background-color:rgb(255, 219, 89);'>"+
-                                "<div class='row' style='height: 400px;width: 90px; background-color:rgb(254, 225, 87);'>"+
-                                    "<blink><h1 class='col display-3 text-danger'>Game Over</h1></blink>"+
-                                "</div>"+
-                              "</div>";
-                              setTimeout(function(){window.location.reload()},5000);
-                      }
+                      
                      </script>
                    </div>
                   <!--  -->
@@ -159,10 +151,10 @@
                           ">
                         <div class="col-md-12 chalkboard">
                           <div class="row">
-                            <h4 class="col-md-12 text-light">
+                            <h4 class="col-md-12 text-light" id="qtxt">
                               Fill in the gap sentence here_______ type answer below.........and click answer button.
                             </h4>
-
+                            <p id="qans"></p>
 
                           </div>
                           <div class="row">
@@ -197,14 +189,13 @@
 
 
 <!-- JavaScript  Starts-->
-
+<script type="text/javascript" src="./questions.js"></script>
 <script type="text/javascript">
 //<!-- JavaScript -->
+      gameOver();//for testing
 
   //VAriables
-        //var setTime=30;//set time 15 sec per 
-        //var setTime=30;//set time 15 sec per 
-        //var setTime=10;//set time 10 sec
+        
         var score=0;
         var quesnum=0;
         var ans=0;
@@ -213,8 +204,6 @@
         var b=0;
         var result=0;
         var playername="";
-
-
   //Name Entry JS Function
     function nameEntry() {
       //gameOver();//for testing
@@ -223,13 +212,13 @@
       if (name=="") {
         alert("Please enter your name ..")
       } else{
-      playername = name;
-            
+          playername = name;
+          
             // Displaying the value
-        document.getElementById("playername").innerHTML="<h3 class='text-danger'>Lets play "+"</h3>"+"<h2 class='display-2 text-danger'>"+playername+"</h2>";
-        //Starting all functions
-        startgame();
-        //quiz();
+          document.getElementById("playername").innerHTML="<h4 class='text-success'>Lets play "+"</h4>"+"<h2 class='display-2 text-success'>"+playername+"</h2>";
+          //Starting all functions
+          startgame();
+          //quiz();
         }
     }
 
@@ -237,9 +226,9 @@
 
 //QUIZ JS FUnction
        function startgame(){
-        //starttimer();
+        starttimer();
         quesnoprint();
-        //quiz();
+        quiz();
         }
 //Question no updater
         function quesnoprint() {
@@ -255,17 +244,18 @@
 
 //QUIZ JS start timerFUnction
        function starttimer(){
-        setTime=30;//set time 15 sec per 
+        setTime=120;//set time 15 sec per 
         setInterval(timecounter,1000);
        
         }
     
   //Time Counter JS Function   
        function timecounter(){
+              setTime=setTime-1;
               
               if (setTime>0) {
                
-                setTime=setTime-1;
+                //setTime=setTime-1;
                 document.getElementById("currenttime").innerHTML="<h3 class='text-light' >"+"Time: "+setTime+"</h3>";
               }
               else if (setTime==0){
@@ -276,31 +266,30 @@
               }
            }
 
+
 //Quiz Function
     function quiz(){
 
-      // var a=2;
+      // var a=0;
       // var b=3;
-     //border border-5 border-primary rounded
-     //document.querySelector(div.quizbox).class="row border border-5 border-primary rounded";
+      a=Math.floor(Math.random()*23);
 
-
-      a=Math.floor(Math.random() * 101);
-      b=Math.floor(Math.random() * 101);
-      var result=a+b;
+      ///
+      var result=questions[a].qans;
       sessionStorage.setItem("result",result);
-      
       //print a
-      document.getElementById("numOne").innerHTML=a;
-      document.getElementById("mathsym").innerHTML="+";
-      //print b
-      document.getElementById("numTwo").innerHTML=b;
-      document.getElementById("eqsym").innerHTML="=";
-      document.getElementById("numThree").innerHTML=result;
+      document.getElementById("qtxt").innerHTML=questions[a].qtxt;
+      document.getElementById("qans").innerHTML=result;
+      
 
       return result;
     }
- 
+ function gameOver(){
+      document.getElementById("qtxt").innerHTML=
+          ""+
+          "<div class='col-md';>"+"<h1 class=' text-danger'><blink>Game Over</blink></h1>"+"</div>";
+          setTimeout(function(){window.location.reload()},5000);
+                      }
 //ansSubmit
         function ansSubmit() {
           // Ans
@@ -319,11 +308,11 @@
         if (ans!=result) {
           gameOver();
         }else if(ans==result){
-          score=score+1;
+          score=score+1;//now adding score
           document.getElementById("score").innerHTML="Score "+score;
           clearInterval(timecounter);
-
-          startgame();
+          setTime=0;
+          startgame();// restarting the game
         }
       }
 
