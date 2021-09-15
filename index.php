@@ -111,20 +111,20 @@
       <div class="row gx-6">
         <!-- Score -->
         <div class="col-md-3">
-          <div class="badge rounded-pill " style="background-color: rgba(250, 14, 5, 0.8);">
+          <div class="badge rounded-pill " style="background-color: rgba(0, 59, 37, 0.8);">
             <p class="h3 text-light" id="score">Score 00</p>
           </div>
         </div>
         <!-- Questions Answered -->
         <div class="col-md-3">
-          <div class="badge rounded-pill " style="background-color: rgba(35, 91, 247, 0.8);">
+          <div class="badge rounded-pill " style="background-color: rgba(0, 59, 37, 0.8);">
             <p class="h3 text-light" id="quesno">Question 00</p>
         </div>
         </div>
         <!-- Time -->
         <div class="offset-md-1 col-md-3">
-          <div class="badge rounded-pill " style="background-color: rgba(250, 14, 5, 0.8);">
-            <p class="h3 text-light" id="currenttime">Timer</p>
+          <div class="badge rounded-pill " style="background-color: rgba(0, 59, 37, 0.8);">
+            <p class="h3 text-light" id="currenttime">Timer 00</p>
           </div>
         </div>
 
@@ -337,9 +337,9 @@
 <!-- Footer  -->
 <!-- ================================================================================== -->
 
-<div class="row text-end fixed-bottom" style=" background-color:rgba(45, 237, 20, 0.7);">
+<div class="row text-end fixed-bottom" style=" background-color:rgba(0, 87, 55, 0.9);">
   <div class="offset-md-1 col-md-10">
-    <p class="text-primary h6">&copy; Copyright 2021. All rights reserved by M. Ali Abrar Khan- <a href="+8801939123946" style="color:whitesmoke; ">+8801939123946</a> <a href="https://github.com/MAliAbrarKhan19/The-Preposition-game-JS-HTML-CSS-Bootstrap" style="text-decoration: none;color: whitesmoke;"> |github Link|  </a>   </p>
+    <p class="text-light h6">&copy; Copyright 2021. All rights reserved by M. Ali Abrar Khan- <a href="call:+8801939123946"  style="color:whitesmoke; ">+8801939123946</a> <a href="https://github.com/MAliAbrarKhan19/The-Preposition-game-JS-HTML-CSS-Bootstrap" style="text-decoration: none;color: whitesmoke;"> |github Link|  </a>   </p>
     
   </div>
 </div>
